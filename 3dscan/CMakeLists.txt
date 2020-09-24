@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
-project(Viewer)
+project(3dscan)
 
 find_package(realsense2 REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -14,8 +14,8 @@ include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
-add_executable (viz Viz.cpp)
+add_executable (main main.cpp)
 
-target_link_libraries (viz ${realsense2_LIBRARY})
-target_link_libraries (viz ${OpenCV_LIBS})
-target_link_libraries (viz ${PCL_LIBRARIES})
+target_link_libraries (main ${realsense2_LIBRARY})
+target_link_libraries (main ${OpenCV_LIBS})
+target_link_libraries (main ${PCL_LIBRARIES})
